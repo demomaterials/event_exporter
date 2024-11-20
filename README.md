@@ -24,10 +24,18 @@ A Collector that can list and watch Kubernetes events, and according to events' 
 # Getting Started
 
 ## Build
-
+Linux
 ```shell
 $ VERSION=v1.0.0 REGISTRY=docker.io make build
 ```
+Mac
+```shell
+export VERSION=v1.0.0
+export REGISTRY=docker.io
+sudo make build
+
+```
+
 If you want to get more information about flag options,please refer to `Makefile` in our repository
 
 ## Run
@@ -56,10 +64,10 @@ curl http://<pod-ip>:9102/metrics
 Name  | Example| Description
 --- | --- | ---
 kubeMasterURL|--kubeMasterURL=<APIServer-URL>|Optional. The URL of kubernetes apiserver to use as a master
-kubeConfigPath| --kubeConfigPath=$HOME/.kube/config|Optional. The path of kubernetes configuration file 
+kubeConfigPath| --kubeConfigPath=$HOME/.kube/config|Optional. The path of kubernetes configuration file
 eventType |--eventType=Warning --eventType=Normal |Optional.  List of allowed event types. The default value is `Warning` type
 port| --port=9102|Optional. Port to expose event metrics on (default 9102)
-version | --version| Print version information 
+version | --version| Print version information
 
 ## Use Kubernetes
 
